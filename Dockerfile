@@ -3,4 +3,6 @@ FROM openjdk:11
 
 # Maintainer 
 MAINTAINER "nehapatil.devops@gmail.com" 
-COPY ./webapp.war /usr/local/tomcat/webapps
+ADD target/*.jar app.jar
+EXPOSE 8080
+CMD ["java","-jar","app.jar"]
